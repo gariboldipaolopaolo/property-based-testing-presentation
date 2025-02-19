@@ -9,6 +9,11 @@ def binary_to_string(binary: str) -> str:
     """Converts a binary string (space-separated) back to text."""
     return ''.join(chr(int(b, 2)) for b in binary.split())
 
+# def binary_to_string(binary: str) -> str:
+#     """Converts a binary string (space-separated) back to text, but with an intentional bug."""
+#     text = ''.join(chr(int(b, 2)) for b in binary.split())
+#     return text[:-1]
+
 @given(st.text())  # Generate random text strings
 def test_binary_conversion(text):
     """Property-based test: Converting to binary and back should return the original text."""
